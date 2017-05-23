@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+  <title>Steve's LOL Interst Page</title>
+  <link rel="stylesheet" href="ms3.css">
+  <script type="text/javascript" src="Image-Slider-LnR.js"></script>
+  <meta charset="UTF-8">
+
+</head>
+
+<body>
+
+<div class="container">
+	<div class="slider_wrapper">
+		<ul id="image_slider">
+			<li><img src="cov1.jpg" alt="..."></li>
+			<li><img src="cov2.jpg" alt="..."></li>
+			<li><img src="cov3.jpg" alt="..."></li>
+		</ul>					
+		<span class="nvgt" id="prev"></span>
+		<span class="nvgt" id="next"></span>
+	</div>
+</div>
+
+<div id="trickNavi">
+    <p>Steve Sun :D</p>
+</div>
+
+<div id='naviBar'>
+<ul>
+   <li class='active'><a href='index.html'>Home</a></li>
+   <li><a href='https://plato.cs.virginia.edu/~ss8ee/final/database.html'>Champions</a></li>
+   <li><a href='news.html'>News</a></li> 
+   <li><a href='http://chrome-oven-727.appspot.com/'>Guestbook</a></li>
+   <li><a href='javascript:AlertIt()'>FAQ</a></li>
+   <li><a href='https://docs.google.com/a/virginia.edu/forms/d/129HuGPoT3LIkPv8nPcsNy-J2JBPDTImaG0f79CCUjFc/viewform?usp=send_form'>Feedback</a></li>
+   <li><a href="mailto:ss8ee@virginia.edu">Contact Me</a></li>
+</ul>
+</div>
+
+<script type="text/javascript">
+	function AlertIt() {
+	var answer = confirm ("Surprise!! But sorry there is nowhere you may continue. Simply because I cannot think of any questions... ")
+	if (answer)
+		window.location="index.html";
+	}
+</script>
+
+
+<audio controls>
+  <source src="Warriors.mp3" type="audio/mpeg">
+</audio>
+
+
+
+<section class="secs">
+	<div id="pics1">
+		<ul id="gallery">
+    		<li id="pic1"><a href="#">
+    			<div id="corp1">
+    				<img src="pic1.jpg" alt="Get Started">
+    			</div>
+    		</a></li>
+
+    		<li id="pic2"><a href="#">
+    			<div id="corp2">
+    				<img src="pic2.jpg" alt="Champion">
+    			</div>
+    		</a></li>
+    	</ul>
+	</div>
+	<div id="video"><iframe src="//www.youtube.com/embed/vzHrjOMfHPY" allowfullscreen></iframe></div>
+</section>
+
+<section class="covsecs">
+	<a href="http://gameinfo.na.leagueoflegends.com/en/game-info/get-started/"><div id="cov1">Get Started</div></a>
+	<div id="ept">?</div>
+	<a href="http://gameinfo.na.leagueoflegends.com/en/game-info/champions/"><div id="cov2">Champions</div></a>
+</section>
+
+<section class="secs2">
+	<div id="pics2">
+		<ul id="galleryb">
+    		<li id="pic1b"><a href="#">
+    			<div id="corp3">
+    				<img src="pic3.jpg" alt="Summoners">
+    			</div>
+    		</a></li>
+
+    		<li id="pic2b"><a href="#">
+    			<div id="corp4">
+    				<img src="pic4.jpg" alt="Downloads">
+    			</div>
+    		</a></li>
+    	</ul>
+	</div>
+	<div class="subsec">
+		<div id="field">
+			<h1>Are you a game addict?</h1>
+			<p>Please input your "real" information. Actually fill whatever you want, just for fun</p>
+			<div id="genderInput">I may call you
+				<select id="gender">
+					<option value="0">Mr.</option>
+					<option value="1">Ms.</option>
+			</select>
+			</div>
+			<div id="nameInput">
+				<input type="text" placeholder="Your full name please" id="name">
+			</div>
+			<div id="ageInput">
+				<input type="number" placeholder="How old are you" id="age">
+				<span>years old</span>
+			</div>
+			<div id="marriageInput">And if I may know you are 
+				<select id="marriage">
+					<option value="0">Married</option>
+					<option value="1">Not Married</option>
+					<option value="2">Whatever, none of your business</option>
+				</select>
+			</div>
+			<div id="hourInput">
+				<input type="number" placeholder="Game Hours each day" id="hours">
+				<span>hours on average</span>
+			</div>
+			<button type="button" id="go">Go!</button>
+			<p id="Result"></p>
+    	</div>
+	</div>
+
+</section>
+
+<section class="covsecs2">
+	<a href="http://gameinfo.na.leagueoflegends.com/en/game-info/summoners/"><div id="cov3">Sommoners</div></a>
+	<div id="ept2">?</div>
+	<a href="https://signup.na.leagueoflegends.com/en/signup/redownload"><div id="cov4">Downloads</div></a>
+</section>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script>
+	document.getElementById("go").addEventListener("click", display);
+	function display() {
+		var name = document.getElementById("name").value;
+		var age = Number(document.getElementById("age").value);
+
+		var g = document.getElementById("gender");
+		var gender = g.options[g.selectedIndex].text;
+		var genderIndex = g.options[g.selectedIndex].value;
+
+		var m = document.getElementById("marriage");
+		var marriage = m.options[m.selectedIndex].value;
+
+		var hours = Number(document.getElementById("hours").value);
+
+		var result1 = "Dear " + gender + " " + name + ", you are " + age + " years old and you play games for " + hours + " each day. ";
+
+		var result2 = "";
+		var result3 = "";
+		var result4 = "";
+
+		if(hours < 0) {
+			result2 = "I don't understand how you play negative hours of game. You don't have to disclose the truth that you are a nerd. "
+			result3 = "";
+			result4 = "";
+		} else if (hours <= 1) {
+			result2 = "I'm surprised you don't waste your time on game. Good job! "
+			if (age <= 25) {
+				result3 = "You are only " + age + " years old, and I am sure you will have great achievedment in the furture. "
+				if (marriage == 0) {
+					if (genderIndex == 0) {
+						result4 = "And I am sure your wife will be proud of you."
+					} else {
+						result4 = "And I am sure your husband will be proud of you."
+					}
+				} else if (marrige = 1) {
+					if (genderIndex == 0) {
+						result4 = "And I am sure girls will love to go out with you."
+					} else {
+						result4 = "And I am sure boys will love to go out with you."
+					}
+				} else {
+					if (genderIndex == 0) {
+						result4 = "And I am sure you are welcomed by girls."
+					} else {
+						result4 = "And I am sure you are welcomed by boys."
+					}
+				}
+			} else if (age <= 50) {
+				result3 = "I am sure you are doing great on your job. "
+				if (marriage == 0) {
+					if (genderIndex == 0) {
+						result4 = "And I am sure your wife will be proud of you."
+					} else {
+						result4 = "And I am sure your husband will be proud of you."
+					}
+				} else if (marrige = 1) {
+					if (genderIndex == 0) {
+						result4 = "And you are not married? No way! Girls will be mad!"
+					} else {
+						result4 = "And you are not married? No way! Boys will be mad!"
+					}
+				} else {
+					if (genderIndex == 0) {
+						result4 = "And I am sure you are welcomed by ladies."
+					} else {
+						result4 = "And I am sure you are welcomed by gentalmen."
+					}
+				}
+			} else {
+				result3 = "Video game is indeed bad for health. I am glad you made the good decision. "
+				result4 = "";
+			}
+		} else if (hours <= 5) {
+			result2 = "Ugh... I have to say you may played a bit.. too much. "
+			if (age <= 25) {
+				result3 = "You are only " + age + " years old, but still don't be wasting your youth around. "
+				if (marriage == 0) {
+					if (genderIndex == 0) {
+						result4 = "And you are married. Consider your wife. Err.. But sometimes game means a lot to a man. Am I right? Yknow I feel you bro."
+					} else {
+						result4 = "So please consider your husband's feeling. You say he plays a lot also? That is his problem but we are talking about you."
+					}
+				} else if (marrige = 1) {
+					if (genderIndex == 0) {
+						result4 = "Err.. But sometimes game means a lot to a man. Am I right? Yknow I feel you bro."
+					} else {
+						result4 = "And you are not married. Make a change, and you still have chance... "
+					}
+				} else {
+					if (genderIndex == 0) {
+						result4 = "And no matter if you married or not, you shouldn't play this much. Err.. But sometimes game means a lot to a man. Am I right? Yknow I feel you bro."
+					} else {
+						result4 = "And no matter if you married or not, you shouldn't play this much. "
+					}
+				}
+			} else if (age <= 50) {
+				result3 = "Then do you still have to time to work? Game is not everything but money is. "
+				if (marriage == 0) {
+					if (genderIndex == 0) {
+						result4 = "And you are married. Consider your wife. Err.. But sometimes game means a lot to a man. Am I right? Yknow I feel you bro."
+					} else {
+						result4 = "So please consider your husband's feeling. You say he plays a lot also? That is his problem but we are talking about you."
+					}
+				} else if (marrige = 1) {
+					if (genderIndex == 0) {
+						result4 = "Err.. But sometimes game means a lot to a man. Am I right? Yknow I feel you bro. But do consider why you are still not married."
+					} else {
+						result4 = "And you are not married. You know why?"
+					}
+				} else {
+					if (genderIndex == 0) {
+						result4 = "And no matter if you married or not, you shouldn't play this much. Err.. But sometimes game means a lot to a man. Am I right? Yknow I feel you bro."
+					} else {
+						result4 = "And no matter if you married or not, you shouldn't play this much. "
+					}
+				}
+			} else {
+				result3 = "Video game is indeed bad for health. You are alreday " + age + " years old. Do something that good for health please." 
+				result4 = "";
+			}
+		} else if (hours <=24) {
+			result2 = "Err.. What? You play " + hours + " hours everyday? You gotta be kidding! Go get a life! Game doesn't give you anything physical!  I hope you are kidding. Really!"
+			result3 = "";
+			result4 = "";
+		} else {
+			result2 = "I must admit you are phenomenal! Even Einstein can't spend more than 24 hours working. I am so thrilled. "
+			result3 = "";
+			result4 = "";
+		}
+
+		var result = result1 + result2 + result3 + result4;
+		document.getElementById("Result").innerHTML = result;
+	}
+</script>
+
+<hr>
+
+<footer>
+	<div id="moreWords">	
+		<p>This page is made and posted by Steve Sun. You may <a href="mailto:ss8ee@virginia.edu">email</a> me or find me on FB.</p>
+		<p>This website mainly helps people, especially for those new to the game, know more about League of Legends. There are some introductions on champions, some backgrounds knowledges, as well as some interesting stuffs.</p>
+		<p>This website used front-end and back-end technologies. You may find some basic HTML and JavaScripts from this home page, database techniques (PHP and SQL) and AJAX call from the Champions page, Bootstrap buildin from News page, as well as python use on Guestbook.</p>
+		<details>
+			<summary>Special Thanks</summary>
+			<p> Thanks for CSSDeck to share its source code on HTML image slider. Find more information <a href = "http://cssdeck.com/">here</a>.</p>
+			<p> Thanks for Tutorial Republic to share its cource code on bootstrap Accordion. Find more information <a href = "http://www.tutorialrepublic.com/">here</a>.</p>
+			<p> Thanks for League of Legends official website for sharing game information. </p>
+		</details>
+		<p>Also contact me if you wanna join me on League :D</p>
+	</div>
+	<div id="icon"><a href="http://na.leagueoflegends.com/"><img src="icon.jpg" alt=""></a></div>
+
+</footer>
+</body>
+
+</html>
